@@ -1,0 +1,19 @@
+[project.scripts]
+inventory = "inventory_agent.inventory:main"
+[project]
+name = "inventory-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "BismaBinteSaleem", email = "bintesyed31312@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "openai-agents>=0.2.8",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
