@@ -1,12 +1,10 @@
-
-
 import asyncio
 from dotenv import load_dotenv
 import os
-from agents import Agent, OpenAIChatCompletionsModel, RunConfig, Runner, function_tool
+from agents import Agent, OpenAIChatCompletionsModel, RunConfig, Runner, enable_verbose_stdout_logging, function_tool
 from openai import AsyncOpenAI
 
-
+#enable_verbose_stdout_logging()
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
@@ -60,7 +58,6 @@ pharma_agent = Agent(
 )
 
 async def main():
-    """Main asynchronous function to run the inventory agent."""
     print("Pharma Inventory Agent Started! (type 'exit' to quit)\n")
     print("Current Inventory:", inventory, "\n")
 
@@ -80,7 +77,6 @@ async def main():
         print("Current Inventory:", inventory)
 
 def start():
-    """A synchronous entry point for the pyproject.toml script."""
     asyncio.run(main())
 
 if __name__ == "__main__":
